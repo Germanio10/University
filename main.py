@@ -7,16 +7,4 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 import settings
 from sqlalchemy.dialects.postgresql import UUID
 import uuid
-import re
 from pydantic import BaseModel, EmailStr, validator
-
-
-########################
-# BLOCK WITH DB MODELS #
-########################
-
-
-Base = declarative_base()
-
-
-class User
