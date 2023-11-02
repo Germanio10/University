@@ -3,6 +3,8 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy.dialects.postgresql import UUID
 
 import uuid
+
+
 ########################
 # BLOCK WITH DB MODELS #
 ########################
