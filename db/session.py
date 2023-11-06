@@ -15,3 +15,11 @@ engine = create_async_engine(settings.REAL_DATABASE_URL, echo=True,
 # create session for the interaction with db
 async_session = sessionmaker(engine, expire_on_commit=False,
                              class_=AsyncSession)
+
+
+async def get_db():
+    try:
+        session: AsyncSession = async_session()
+        yield session
+    finally:
+        await session.close()

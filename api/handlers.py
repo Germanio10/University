@@ -1,7 +1,10 @@
+from fastapi import Depends
 from fastapi.routing import APIRouter
 from api.models import UserCreate, ShowUser
 from db.session import async_session
 from db.dals import UserDAL
+from sqlalchemy.ext.asyncio import AsyncSession
+from db.session import get_db
 
 user_router = APIRouter()
 
@@ -29,5 +32,5 @@ async def _create_user(body: UserCreate):
 
 
 @user_router.post("/", response_model=ShowUser)
-async def create_user(body: UserCreate):
-    return await _create_user(body)
+async def create_user(body: UserCreate, db: AsyncSession = Depends(get_db)):
+    return await _create_user(body, db)
