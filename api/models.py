@@ -8,7 +8,7 @@ import uuid
 #########################
 
 
-LETTER_MATCH_PATTERN = re.compile(r'^[я-яА-Яа-zA-Z\-]+$')
+LETTER_MATCH_PATTERN = re.compile(r"^[а-яА-Яa-zA-Z\-]+$")
 
 
 class TunedModel(BaseModel):

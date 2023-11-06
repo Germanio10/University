@@ -1,5 +1,5 @@
 from fastapi.routing import APIRouter
-from models import UserCreate, ShowUser
+from api.models import UserCreate, ShowUser
 from db.session import async_session
 from db.dals import UserDAL
 
